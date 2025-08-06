@@ -8,4 +8,8 @@
   - axios
 
 - back
+
   - fastapi
+  - sqlalchemy
+
+- tab width = 2

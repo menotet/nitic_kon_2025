@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.tsx"; // 拡張子を.tsxに変更
+import AppRoutes from "./AppRoutes.tsx"; // 拡張子を.tsxに変更
 
 // rootの存在チェックを追加
 const rootElement = document.getElementById("root");
@@ -14,6 +14,6 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <AppRoutes />
   </StrictMode>
 );
