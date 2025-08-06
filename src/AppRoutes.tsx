@@ -7,7 +7,7 @@ import {
 
 import Top from "./page/Top.tsx";
 
-// リンク先をリストで一括指定
+// リンク先をリストで一括指定.
 const routes = [
   {
     path: "/",
@@ -15,7 +15,7 @@ const routes = [
   },
 ] as const satisfies RouteProps[];
 
-// 実際のルーティング
+// 実際のルーティング.
 const AppRoutes = () => {
   return (
     <BrowserRouter>
