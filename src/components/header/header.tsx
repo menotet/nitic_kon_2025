@@ -1,4 +1,4 @@
-// ヘッダーコンポーネント.
+/*ヘッダーコンポーネント.*/
 export default function Header() {
   return (
     <>
@@ -18,20 +18,18 @@ export default function Header() {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
-            <span className="ml-3 text-xl">Tailblocks</span>
+            <span className="ml-3 text-xl">Kon</span>
           </a>
 
           {/*ナビゲーションリンク.*/}
-          <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-5 hover:text-gray-900">First Link</a>
-            <a className="mr-5 hover:text-gray-900">Second Link</a>
-            <a className="mr-5 hover:text-gray-900">Third Link</a>
-            <a className="mr-5 hover:text-gray-900">Fourth Link</a>
+          <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center gap-x-4">
+            <a className="mr-5 hover:text-gray-900">TimeTable</a>
+            <a className="mr-5 hover:text-gray-900">BandList</a>
           </nav>
 
           {/*ボタン (つけないかも).*/}
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-            Button
+          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 justify-end">
+            Login
             <svg
               fill="none"
               stroke="currentColor"

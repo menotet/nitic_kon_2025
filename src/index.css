@@ -1,2 +1,7 @@
-/*cssはtailwindで指定*/
+/* cssはtailwindで指定 */
 @import "tailwindcss";
+
+/* カスタムカラー */
+@theme {
+  --color-custom_gray: #1f1f1f11;
+}
