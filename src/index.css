@@ -3,5 +3,6 @@
 
 /* カスタムカラー */
 @theme {
-  --color-custom_gray: #1f1f1f11;
+  --color-custom_bg_gray: #1f1f1f;
+  --color-custom_text_gray: #b1b1b1;
 }

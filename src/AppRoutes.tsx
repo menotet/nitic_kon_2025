@@ -5,7 +5,7 @@ import {
   type RouteProps,
 } from "react-router-dom";
 
-import Top from "./page/Top.tsx";
+import top from "./page/Top.tsx";
 
 {
   /* リンク先をリストで一括指定.*/
@@ -13,7 +13,7 @@ import Top from "./page/Top.tsx";
 const routes = [
   {
     path: "/",
-    Component: Top,
+    Component: top,
   },
 ] as const satisfies RouteProps[];
 
