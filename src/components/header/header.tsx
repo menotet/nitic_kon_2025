@@ -1,4 +1,6 @@
 /* ヘッダーコンポーネント. */
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <>
@@ -23,7 +25,9 @@ export default function Header() {
 
           {/* ナビゲーションリンク. */}
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-end-safe gap-x-4">
-            <a className="mr-5 hover:text-gray-900">TimeTable</a>
+            <Link to="/Timetable">
+              <a className="mr-5 hover:text-gray-900">TimeTable</a>
+            </Link>
             <a className="mr-5 hover:text-gray-900">BandList</a>
           </nav>
 

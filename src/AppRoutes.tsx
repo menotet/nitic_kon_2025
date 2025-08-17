@@ -5,7 +5,8 @@ import {
   type RouteProps,
 } from "react-router-dom";
 
-import top from "./page/Top.tsx";
+import Top from "./page/Top.tsx";
+import Timetable from "./page/Timetable.tsx";
 
 {
   /* リンク先をリストで一括指定.*/
@@ -13,7 +14,11 @@ import top from "./page/Top.tsx";
 const routes = [
   {
     path: "/",
-    Component: top,
+    Component: Top,
+  },
+  {
+    path: "/timetable",
+    Component: Timetable,
   },
 ] as const satisfies RouteProps[];
 
