@@ -20,6 +20,10 @@ const routes = [
     path: "/timetable",
     Component: Timetable,
   },
+  {
+    path: "/Bandlist",
+    Component: Timetable,
+  },
 ] as const satisfies RouteProps[];
 
 {
