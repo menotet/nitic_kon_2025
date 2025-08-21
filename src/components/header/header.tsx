@@ -27,11 +27,11 @@ export default function Header() {
 
           {/* ナビゲーションリンク. */}
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-end-safe gap-x-4">
-            <Link to="/Timetable">
-              <a className="mr-5 hover:text-gray-900">TimeTable</a>
+            <Link to="/timetable">
+              <a className="mr-5">TimeTable</a>
             </Link>
-            <Link to="/Bandlist">
-              <a className="mr-5 hover:text-gray-900">BandList</a>
+            <Link to="/bandlist">
+              <a className="mr-5">BandList</a>
             </Link>
           </nav>
 

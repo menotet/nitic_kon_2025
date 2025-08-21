@@ -19,7 +19,7 @@ const Top = () => {
         </div>
 
         <div className="container flex flex-col items-center mx-8 my-8 px-40 font-bold">
-          現在のバンド: {current_band}
+          Now playing: {current_band}
         </div>
 
         <Link to="/timetable">

@@ -21,7 +21,7 @@ const routes = [
     Component: Timetable,
   },
   {
-    path: "/Bandlist",
+    path: "/bandlist",
     Component: Timetable,
   },
 ] as const satisfies RouteProps[];
