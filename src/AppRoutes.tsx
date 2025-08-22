@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import Top from "./page/Top.tsx";
-import Timetable from "./page/Timetable.tsx";
+import TimeTable from "./page/TimeTable.tsx";
 
 {
   /* リンク先をリストで一括指定.*/
@@ -18,11 +18,11 @@ const routes = [
   },
   {
     path: "/timetable",
-    Component: Timetable,
+    Component: TimeTable,
   },
   {
     path: "/bandlist",
-    Component: Timetable,
+    Component: TimeTable,
   },
 ] as const satisfies RouteProps[];
 
