@@ -36,7 +36,7 @@ export default function Header() {
           </nav>
 
           {/* ボタン. */}
-          <button className="inline-flex items-center bg-blue-800 border-0 py-1 px-3 focus:outline-none hover:bg-blue-900 rounded text-base mt-4 md:mt-0 justify-end">
+          <button className="inline-flex items-center bg-button_bg border-0 py-1 px-3 focus:outline-none hover:bg-blue-900 rounded text-base mt-4 md:mt-0 justify-end">
             Login
             <svg
               fill="none"

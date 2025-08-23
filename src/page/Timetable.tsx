@@ -5,18 +5,17 @@ import { Link } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import SelectDayButton from "../components/SelectDayButton";
+import Accordion from "../components/Accordion";
 
 const Timetable = () => {
   const current_band = "band";
 
-  // --- 日付処理一式. ---
+  // === 日付処理一式. ===
   const [visibleDay, setVisible] = useState(1);
   const changeDay = (day: number) => {
     setVisible(day);
   };
-  const dayButtonCss = visibleDay
-    ? "bg-blue-800 text-white px-4 py-2 mb-4"
-    : "bg-gray-500 text-white px-4 py-2 mb-4";
+  // === ===
 
   return (
     <>
@@ -46,7 +45,15 @@ const Timetable = () => {
           <div className="flex flex-col mx-auto p-8 items-center justify-center">
             <h2 className="text-2xl font-bold mb-4">Day 1</h2>
 
-            {/* タイムテーブルの内容をここに追加 */}
+            {/* === タイムテーブルの内容をここに追加. === */}
+            <div className="flex flex-col items-center justify-center w-full">
+              <Accordion
+                title="title"
+                songs={["song1", "song2", "song3"]}
+                time="12:00"
+              />
+            </div>
+            {/* === === */}
           </div>
         )}
 

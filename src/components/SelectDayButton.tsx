@@ -11,7 +11,7 @@ const SelectDayButton = ({
 }) => {
   const isSelected = day === visibleDay;
   const buttonCss = isSelected
-    ? "bg-blue-800 text-white px-4 py-2 mb-4"
+    ? "bg-button_bg text-white px-4 py-2 mb-4"
     : "bg-gray-500 text-white px-4 py-2 mb-4";
 
   return (

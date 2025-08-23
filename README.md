@@ -2,7 +2,8 @@
 
 - front
 
-  - react + vite
+  - vite
+  - react
   - tailwindcss
   - react router
   - axios

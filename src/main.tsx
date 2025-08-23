@@ -1,9 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import AppRoutes from "./AppRoutes.tsx"; // 拡張子を.tsxに変更
+import AppRoutes from "./AppRoutes.tsx";
 
-// rootの存在チェックを追加
+import { ThemeProvider } from "@material-tailwind/react";
+
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
@@ -14,6 +15,8 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <AppRoutes />
+    <ThemeProvider>
+      <AppRoutes />
+    </ThemeProvider>
   </StrictMode>
 );

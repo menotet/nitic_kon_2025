@@ -5,4 +5,13 @@
 @theme {
   --color-custom_bg_gray: #1f1f1f;
   --color-custom_text_gray: #b1b1b1;
+
+  /* === ボタン関係 === */
+  --color-button_bg: #304ed1;
+  /* === === */
+
+  /* === アコーディオン === */
+  --color-accordion_bg: #2a2a2a;
+  --color-accordion_bg_hover: #3a3a3a;
+  /* === === */
 }
