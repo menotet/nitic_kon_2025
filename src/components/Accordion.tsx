@@ -19,15 +19,16 @@ const Accordion = ({
   return (
     <>
       <div className="flex w-full">
-        <p className="font-bold">{time}</p>
-
         <div className="w-full max-w-md mx-auto my-4 border border-gray-300 shadow-md">
           <button
             className="w-full px-4 py-2 text-left bg-accordion_bg hover:bg-accordion_bg_hover rounded-t-lg focus:outline-none"
             onClick={toggleAccordion}
           >
             <div className="flex justify-between items-center">
-              <span className="font-semibold">{title}</span>
+              <p className="font-bold">{time}</p>
+              <span className="absolute left-1/2 -translate-x-1/2 font-semibold">
+                {title}
+              </span>
               <span>{isOpen ? "-" : "+"}</span>
             </div>
           </button>
