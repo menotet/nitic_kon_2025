@@ -20,11 +20,11 @@ const Top = () => {
         {
           // バナー.
         }
-        <div className="flex flex-col items-center mx-auto p-8">
+        <div className="flex flex-col items-center mx-auto p-8 md:mx-[20%]">
           <img src={titleart} />
         </div>
 
-        <div className="flex flex-col items-center justify-center w-full my-8 px-8 font-bold">
+        <div className="flex flex-col items-center justify-center m-4 px-4 font-bold">
           <p className="text-2">Now playing</p>
           <Accordion title={current_band} songs={current_song} time="12:00" />
         </div>
@@ -33,7 +33,7 @@ const Top = () => {
           // タイムテーブル用画像.
         }
 
-        <div className="flex flex-col items-center mx-8 px-2 lg:mx-48">
+        <div className="flex flex-col items-center mx-8 px-2 md:mx-[30%]">
           <Link to="/timetable">
             <img src={bandlist} />
           </Link>
