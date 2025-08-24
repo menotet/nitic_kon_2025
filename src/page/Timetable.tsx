@@ -1,4 +1,4 @@
-/* タイムテーブル. */
+// タイムテーブル.
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -26,7 +26,9 @@ const Timetable = () => {
           <h1 className="text-3xl font-bold mb-4 ">TimeTable</h1>
         </div>
 
-        {/* 日付変えるボタン. */}
+        {
+          // 日付変えるボタン.
+        }
         <div className="flex items-center justify-center mx-auto p-8">
           <SelectDayButton
             day={1}
@@ -40,12 +42,16 @@ const Timetable = () => {
           />
         </div>
 
-        {/* タイムテーブル Day1. */}
+        {
+          //タイムテーブル Day1.
+        }
         {visibleDay === 1 && (
           <div className="flex flex-col mx-auto p-8 items-center justify-center">
             <h2 className="text-2xl font-bold mb-4">Day 1</h2>
 
-            {/* === タイムテーブルの内容をここに追加. === */}
+            {
+              // === タイムテーブルの内容をここに追加. ===
+            }
             <div className="flex flex-col items-center justify-center w-full">
               <Accordion
                 title="title"
@@ -53,11 +59,15 @@ const Timetable = () => {
                 time="12:00"
               />
             </div>
-            {/* === === */}
+            {
+              // === ===
+            }
           </div>
         )}
 
-        {/* タイムテーブル Day2. */}
+        {
+          //タイムテーブル Day2.
+        }
         {visibleDay === 2 && (
           <div className="flex flex-col mx-auto p-8 items-center justify-center">
             <h2 className="text-2xl font-bold mb-4">Day 2</h2>

@@ -7,6 +7,7 @@ import {
 
 import Top from "./page/Top.tsx";
 import TimeTable from "./page/TimeTable.tsx";
+import BandList from "./page/BandList.tsx";
 
 {
   /* リンク先をリストで一括指定.*/
@@ -22,7 +23,7 @@ const routes = [
   },
   {
     path: "/bandlist",
-    Component: TimeTable,
+    Component: BandList,
   },
 ] as const satisfies RouteProps[];
 

@@ -3,8 +3,6 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import AppRoutes from "./AppRoutes.tsx";
 
-import { ThemeProvider } from "@material-tailwind/react";
-
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
@@ -15,8 +13,6 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <ThemeProvider>
-      <AppRoutes />
-    </ThemeProvider>
+    <AppRoutes />
   </StrictMode>
 );

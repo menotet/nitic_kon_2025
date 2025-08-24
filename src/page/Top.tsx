@@ -1,32 +1,44 @@
-/* トップページ.*/
+// トップページ.
 import { Link } from "react-router-dom";
 
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import Accordion from "../components/Accordion";
 
 import titleart from "../assets/titleart.jpg";
 import bandlist from "../assets/bandlist.jpg";
 
-const current_band = "band";
-
 const Top = () => {
+  const current_band = "band";
+  const current_song = ["song1", "song2", "song3"];
+
   return (
     <>
       <div className="text-white bg-custom_bg_gray min-h-[100vh] min-w0-[100vh]">
         <Header />
-        <div className="container flex flex-col items-center mx-auto p-8">
+
+        {
+          // バナー.
+        }
+        <div className="flex flex-col items-center mx-auto p-8">
           <img src={titleart} />
         </div>
 
-        <div className="container flex flex-col items-center mx-8 my-8 px-40 font-bold">
-          Now playing: {current_band}
+        <div className="flex flex-col items-center justify-center w-full my-8 px-8 font-bold">
+          <p className="text-2">Now playing</p>
+          <Accordion title={current_band} songs={current_song} time="12:00" />
         </div>
 
-        <Link to="/timetable">
-          <div className="container flex flex-col items-center mx-8 px-40">
+        {
+          // タイムテーブル用画像.
+        }
+
+        <div className="flex flex-col items-center mx-8 px-2 lg:mx-48">
+          <Link to="/timetable">
             <img src={bandlist} />
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <Footer />
       </div>
     </>

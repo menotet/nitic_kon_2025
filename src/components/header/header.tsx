@@ -1,4 +1,4 @@
-/* ヘッダーコンポーネント. */
+// ヘッダーコンポーネント.
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -6,7 +6,9 @@ export default function Header() {
     <>
       <header className="custom-text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          {/* ロゴ. */}
+          {
+            // === ロゴ. ===
+          }
           <Link to="/">
             <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
               <svg
@@ -24,8 +26,13 @@ export default function Header() {
               <span className="ml-3 text-xl">Kon</span>
             </a>
           </Link>
+          {
+            // === ===
+          }
 
-          {/* ナビゲーションリンク. */}
+          {
+            // === ナビゲーションリンク. ===
+          }
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-end-safe gap-x-4">
             <Link to="/timetable">
               <a className="mr-5">TimeTable</a>
@@ -34,8 +41,14 @@ export default function Header() {
               <a className="mr-5">BandList</a>
             </Link>
           </nav>
+          {
+            // === ===
+          }
 
-          {/* ボタン. */}
+          {/*
+          {
+            // === ボタン. ===
+          }
           <button className="inline-flex items-center bg-button_bg border-0 py-1 px-3 focus:outline-none hover:bg-blue-900 rounded text-base mt-4 md:mt-0 justify-end">
             Login
             <svg
@@ -50,6 +63,9 @@ export default function Header() {
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </button>
+          {
+            // === ===
+          */}
         </div>
       </header>
     </>
