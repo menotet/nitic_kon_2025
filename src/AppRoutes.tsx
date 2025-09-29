@@ -4,9 +4,9 @@ import Top from "./pages/Top.tsx";
 import TimeTable from "./pages/TimeTable.tsx";
 import BandList from "./pages/BandList.tsx";
 import Login from "./pages/Login.tsx";
-import AdminLayout from "./pages/AdminLayout.tsx";
-import AdminIndex from "./pages/AdminIndex.tsx";
-import AdminData from "./pages/AdminData.tsx";
+import AdminLayout from "./pages/admin/AdminLayout.tsx";
+import AdminIndex from "./pages/admin/AdminIndex.tsx";
+import AdminTimetableData from "./pages/admin/AdminTimetableData.tsx";
 
 const AppRoutes = () => {
   return (
@@ -19,7 +19,7 @@ const AppRoutes = () => {
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminIndex />} />
-          <Route path="data" element={<AdminData />} />
+          <Route path="timetabledata" element={<AdminTimetableData />} />
         </Route>
       </Routes>
     </BrowserRouter>
