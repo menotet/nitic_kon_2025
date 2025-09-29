@@ -26,7 +26,7 @@ const Accordion = ({
           >
             <div className="flex justify-between items-center">
               <p className="font-bold">{time}</p>
-              <span className="absolute left-1/2 -translate-x-1/2 font-semibold">
+              <span className="flex left-1/2 -translate-x-1/2 font-semibold">
                 {title}
               </span>
               <span>{isOpen ? "-" : "+"}</span>

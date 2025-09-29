@@ -1,42 +1,26 @@
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  type RouteProps,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Top from "./page/Top.tsx";
-import TimeTable from "./page/TimeTable.tsx";
-import BandList from "./page/BandList.tsx";
+import Top from "./pages/Top.tsx";
+import TimeTable from "./pages/TimeTable.tsx";
+import BandList from "./pages/BandList.tsx";
+import Login from "./pages/Login.tsx";
+import AdminLayout from "./pages/AdminLayout.tsx";
+import AdminIndex from "./pages/AdminIndex.tsx";
+import AdminData from "./pages/AdminData.tsx";
 
-{
-  /* リンク先をリストで一括指定.*/
-}
-const routes = [
-  {
-    path: "/",
-    Component: Top,
-  },
-  {
-    path: "/timetable",
-    Component: TimeTable,
-  },
-  {
-    path: "/bandlist",
-    Component: BandList,
-  },
-] as const satisfies RouteProps[];
-
-{
-  /* 実際のルーティング.*/
-}
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {routes.map(({ path, Component }, i) => (
-          <Route key={i} path={path} element={<Component />} />
-        ))}
+        <Route path="/" element={<Top />} />
+        <Route path="/timetable" element={<TimeTable />} />
+        <Route path="/bandlist" element={<BandList />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminIndex />} />
+          <Route path="data" element={<AdminData />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
