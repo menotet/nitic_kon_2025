@@ -1,1 +1,1 @@
-cd api && uvicorn main:app --reload
+cd api && uv run uvicorn main:app --reload
