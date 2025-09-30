@@ -128,3 +128,50 @@ def delete_timetable_item(item_id: int, user: Annotated[auth.UserInDB, Depends(a
             cursor.execute("DELETE FROM timetable WHERE id=?", (item_id,))
             conn.commit()
             return {"message": "Item deleted successfully"}
+
+class User(BaseModel):
+    username: str
+
+class UserCreate(User):
+    password: str
+
+@app.get("/users", response_model=list[User])
+def get_users(user: Annotated[auth.UserInDB, Depends(auth.get_current_user)]):
+    with closing(get_db_conn()) as conn:
+        with closing(conn.cursor()) as cursor:
+            cursor.execute("SELECT username FROM users")
+            rows = cursor.fetchall()
+            return [dict(row) for row in rows]
+
+@app.post("/users", response_model=User)
+
+def create_user(new_user: UserCreate, user: Annotated[auth.UserInDB, Depends(auth.get_current_user)]):
+    hashed_password = auth.get_password_hash(new_user.password)
+    with closing(get_db_conn()) as conn:
+        with closing(conn.cursor()) as cursor:
+            try:
+                cursor.execute("INSERT INTO users (username, hashed_password) VALUES (?, ?)", (new_user.username, hashed_password))
+                conn.commit()
+            except sqlite3.IntegrityError:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Username already registered",
+                )
+            return {"username": new_user.username}
+
+@app.put("/users/{username}")
+def update_user_password(username: str, new_user: UserCreate, user: Annotated[auth.UserInDB, Depends(auth.get_current_user)]):
+    hashed_password = auth.get_password_hash(new_user.password)
+    with closing(get_db_conn()) as conn:
+        with closing(conn.cursor()) as cursor:
+            cursor.execute("UPDATE users SET hashed_password=? WHERE username=?", (hashed_password, username))
+            conn.commit()
+            return {"message": "Password updated successfully"}
+
+@app.delete("/users/{username}")
+def delete_user(username: str, user: Annotated[auth.UserInDB, Depends(auth.get_current_user)]):
+    with closing(get_db_conn()) as conn:
+        with closing(conn.cursor()) as cursor:
+            cursor.execute("DELETE FROM users WHERE username=?", (username,))
+            conn.commit()
+            return {"message": "User deleted successfully"}
