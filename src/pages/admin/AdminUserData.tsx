@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { User } from "../../types/User.d";
+import { useAuth } from "../../auth/AuthContext";
 
 interface NewUser extends User {
   password?: string;
@@ -12,16 +13,24 @@ const AdminUserData: React.FC = () => {
     password: "",
   });
   const [editingItem, setEditingItem] = useState<User | null>(null);
+  const { token } = useAuth();
 
   const API_URL = "http://127.0.0.1:8000/users";
 
+  const getAuthHeaders = () => ({
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  });
+
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    if (token) {
+      fetchUsers();
+    }
+  }, [token]);
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(API_URL, { headers: getAuthHeaders() });
       if (!response.ok) {
         console.error("Failed to fetch users:", response.statusText);
         return;
@@ -53,9 +62,7 @@ const AdminUserData: React.FC = () => {
     try {
       const response = await fetch(url, {
         method: method,
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: getAuthHeaders(),
         body: JSON.stringify(itemToSubmit),
       });
       if (response.ok) {
@@ -80,6 +87,7 @@ const AdminUserData: React.FC = () => {
       try {
         const response = await fetch(`${API_URL}/${username}`, {
           method: "DELETE",
+          headers: getAuthHeaders(),
         });
         if (response.ok) {
           fetchUsers();

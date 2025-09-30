@@ -46,11 +46,9 @@ def init_db():
                     hashed_password TEXT NOT NULL
                 )
             ''')
-            # Add a default admin user if not exists
-            cursor.execute("SELECT username FROM users WHERE username = 'admin'")
-            if not cursor.fetchone():
-                hashed_password = auth.get_password_hash("password")
-                cursor.execute("INSERT INTO users (username, hashed_password) VALUES (?, ?)", ('admin', hashed_password))
+            # Add or replace a default admin user
+            hashed_password = auth.get_password_hash("password")
+            cursor.execute("INSERT OR REPLACE INTO users (username, hashed_password) VALUES (?, ?)", ('admin', hashed_password))
             
             conn.commit()
 
